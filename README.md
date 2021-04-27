@@ -4,6 +4,8 @@ Comandos para fazer a aplicação funcionar:
 
 git clone https://github.com/mateusbueno/desafio-pfa-docker-1.git
 
+cd desafio-pfa-docker-1
+
 docker network create pfa-1-network
 
 docker run -d --network pfa-1-network --name db -v $(pwd)/mysql:/var/lib/mysql -v $(pwd)/scripts:/docker-entrypoint-initdb.d -e MYSQL_DATABASE=nodedb -e MYSQL_ROOT_PASSWORD=root --restart always mysql:5.7 --innodb-use-native-aio=0
